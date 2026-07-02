@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Download Poiser Fresh Chicken</title>
+
+  <script>
+    const playStoreUrl = "https://play.google.com/store/apps/details?id=com.devwithdelta.shopcustomer";
+    const appStoreUrl = "https://apps.apple.com/app/6777937810";
+
+    window.onload = function () {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(ua)) {
+        window.location.href = playStoreUrl;
+        return;
+      }
+
+      if (/iPhone|iPad|iPod/i.test(ua)) {
+        window.location.href = appStoreUrl;
+        return;
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: #fff8f3;
+      color: #222;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: bold;
+      color: #b40000;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: block;
+      max-width: 280px;
+      margin: 16px auto;
+      padding: 15px;
+      background: #b40000;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="brand">Poiser Fresh Chicken</div>
+  <div class="subtitle">Taaza chicken, ande aur masale ghar baithe order karein</div>
+
+  <h2>App download karein</h2>
+  <p>Agar automatic redirect nahi hua, neeche button par click karein.</p>
+
+  <a class="btn" href="https://play.google.com/store/apps/details?id=com.devwithdelta.shopcustomer">
+    Android App Download
+  </a>
+
+  <a class="btn" href="https://apps.apple.com/app/6777937810">
+    iPhone App Download
+  </a>
+</body>
+</html>
