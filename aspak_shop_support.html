@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Support page for Poiser Fresh Chicken by Aspak Chicken Shop. Get help with orders, delivery, account deletion, privacy, and app support." />
   <title>Support | Poiser Fresh Chicken</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand: #c0392b;
-      --brand-dark: #8f241b;
-      --brand-soft: #fdecea;
-      --accent: #f39c12;
-      --bg: #f8f5f1;
+      /* Premium Harvest design tokens */
+      --brand: #b7102a;
+      --brand-dark: #92001d;
+      --brand-soft: #ffdad8;
+      --accent: #485f84;
+      --accent-soft: #d5e3ff;
+      --bg: #f8f9fa;
       --card: #ffffff;
-      --text: #263238;
-      --muted: #6b7280;
-      --line: #ece7df;
+      --text: #191c1d;
+      --muted: #5b403f;
+      --line: #e1e3e4;
       --success: #1f8a4c;
-      --shadow: 0 18px 45px rgba(38, 50, 56, 0.12);
+      --shadow: 0 4px 20px -2px rgba(25, 28, 29, 0.08);
+      --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * {
@@ -27,13 +34,18 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-body);
       background:
-        radial-gradient(circle at top left, rgba(243, 156, 18, 0.15), transparent 32%),
-        linear-gradient(180deg, #fffaf5 0%, var(--bg) 55%, #ffffff 100%);
+        radial-gradient(circle at top left, rgba(255, 218, 216, 0.5), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 55%, #ffffff 100%);
       color: var(--text);
       line-height: 1.65;
       min-height: 100vh;
+    }
+
+    h1, h2, h3, summary {
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
     }
 
     a {
@@ -117,7 +129,7 @@
 
     .quick-card {
       background: var(--card);
-      border-radius: 24px;
+      border-radius: 1rem;
       box-shadow: var(--shadow);
       padding: 26px;
       display: grid;
@@ -148,14 +160,17 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 14px 18px;
-      border-radius: 16px;
+      padding: 14px 22px;
+      border-radius: 999px;
       color: #fff;
       background: var(--brand);
-      font-weight: 800;
-      box-shadow: 0 10px 22px rgba(192, 57, 43, 0.22);
+      font-family: var(--font-display);
+      font-weight: 700;
+      box-shadow: 0 10px 24px -6px rgba(183, 16, 42, 0.45);
       text-align: center;
     }
+
+    .button:active { transform: scale(0.95); }
 
     .button.secondary {
       background: #fff;
@@ -180,9 +195,9 @@
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 1rem;
       padding: 24px;
-      box-shadow: 0 10px 28px rgba(38, 50, 56, 0.06);
+      box-shadow: var(--shadow);
     }
 
     .card.full {
@@ -194,7 +209,7 @@
       height: 46px;
       display: grid;
       place-items: center;
-      border-radius: 15px;
+      border-radius: 0.75rem;
       background: var(--brand-soft);
       color: var(--brand-dark);
       font-size: 24px;
@@ -267,7 +282,7 @@
     details {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 0.75rem;
       padding: 16px 18px;
     }
 
@@ -301,15 +316,17 @@
     }
 
     .notice {
-      background: #fff9e8;
-      border: 1px solid #f5ddb0;
+      background: var(--accent-soft);
+      border: 1px solid #b0c7f2;
       border-left: 5px solid var(--accent);
-      border-radius: 18px;
+      border-radius: 0.75rem;
       padding: 18px 20px;
       margin-top: 20px;
-      color: #5f4211;
+      color: #30476b;
       font-size: 15px;
     }
+
+    .notice a { color: #30476b; }
 
     .footer {
       border-top: 1px solid var(--line);
@@ -492,16 +509,17 @@
     </section>
 
     <section class="notice" aria-label="Privacy notice">
-      <strong>Privacy:</strong> For details about how we collect, use, and protect your information, please read our Privacy Policy. Replace the link below with your hosted privacy policy URL before publishing this page.
+      <strong>Privacy:</strong> For details about how we collect, use, and protect your information, please read our Privacy Policy.
       <br />
-      <a href="https://legendimran.github.io/myApps/aspak_shop_privacypolicy.html">Privacy Policy</a>
+      <a href="aspak_shop_privacypolicy.html">Privacy Policy</a>
     </section>
 
     <footer class="footer">
       <div class="footer-links">
+        <a href="aspak_shop.html">Home</a>
         <a href="mailto:devwithdelta@gmail.com">Email Support</a>
         <a href="tel:+919833878819">Call Support</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="aspak_shop_privacypolicy.html">Privacy Policy</a>
       </div>
       <p>&copy; <span id="year"></span> Aspak Chicken Shop. All rights reserved.</p>
     </footer>
