@@ -1,78 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Download the Poiser Fresh Chicken app by Aspak Chicken Shop — fresh chicken, eggs and masale delivered in Kandivali East, Mumbai." />
+  <meta name="theme-color" content="#b7102a" />
   <title>Download Poiser Fresh Chicken</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍗</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script>
     const playStoreUrl = "https://play.google.com/store/apps/details?id=com.devwithdelta.freshchicken";
-    const appStoreUrl = "https://apps.apple.com/in/app/id6777937810";
-    // https://apps.apple.com/in/app/poiser-fresh-chicken/id6777937810
+    const appStoreUrl = "https://apps.apple.com/in/app/poiser-fresh-chicken/id6777937810";
 
     window.onload = function () {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const note = document.getElementById("redirectNote");
 
       if (/android/i.test(ua)) {
+        if (note) note.textContent = "Opening Google Play…";
         window.location.href = playStoreUrl;
         return;
       }
-
       if (/iPhone|iPad|iPod/i.test(ua)) {
+        if (note) note.textContent = "Opening the App Store…";
         window.location.href = appStoreUrl;
         return;
       }
+      if (note) note.textContent = "Choose your platform below to download the app.";
     };
   </script>
 
   <style>
+    :root {
+      --primary: #b7102a;
+      --primary-container: #db3140;
+      --primary-fixed: #ffdad8;
+      --on-primary-fixed-variant: #92001d;
+      --ink: #191c1d;
+      --muted: #5b403f;
+      --outline: #8f6f6e;
+      --surface: #f8f9fa;
+      --success: #1f8a4c;
+      --success-soft: #e2f2e8;
+      --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Arial, sans-serif;
+      font-family: var(--font-body);
+      color: var(--ink);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px 20px;
+      background:
+        radial-gradient(620px 460px at 88% 6%, rgba(255, 218, 216, 0.75), transparent 66%),
+        radial-gradient(560px 460px at -6% 98%, rgba(255, 179, 177, 0.45), transparent 64%),
+        linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: min(440px, 100%);
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 28px;
+      box-shadow: 0 24px 56px -16px rgba(25, 28, 29, 0.22);
+      padding: 40px 32px 32px;
       text-align: center;
-      padding: 40px 20px;
-      background: #fff8f3;
-      color: #222;
+    }
+
+    .app-icon {
+      width: 92px; height: 92px;
+      margin: 0 auto 20px;
+      border-radius: 26px;
+      display: grid; place-items: center;
+      font-size: 48px;
+      background: linear-gradient(140deg, var(--primary-container), var(--primary));
+      box-shadow: 0 16px 32px -8px rgba(183, 16, 42, 0.5);
     }
 
     .brand {
-      font-size: 30px;
-      font-weight: bold;
-      color: #b40000;
-      margin-bottom: 8px;
+      font-family: var(--font-display);
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
     }
+    .by { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--outline); margin-bottom: 14px; }
+    .tagline { font-size: 15.5px; color: var(--muted); margin-bottom: 8px; }
+    .hindi { font-size: 14.5px; font-weight: 600; color: var(--on-primary-fixed-variant); margin-bottom: 22px; }
 
-    .subtitle {
-      font-size: 16px;
-      margin-bottom: 28px;
+    .note {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      background: var(--surface);
+      border: 1px solid #ececec;
+      padding: 9px 16px; border-radius: 999px;
+      margin-bottom: 24px;
     }
+    .spinner {
+      width: 13px; height: 13px; border-radius: 50%;
+      border: 2px solid var(--primary-fixed);
+      border-top-color: var(--primary);
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    .btn {
-      display: block;
-      max-width: 280px;
-      margin: 16px auto;
-      padding: 15px;
-      background: #b40000;
-      color: white;
+    .store-badges { display: grid; gap: 12px; margin-bottom: 22px; }
+
+    .store-badge {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 16px;
+      padding: 13px 22px;
       text-decoration: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
+      box-shadow: 0 10px 24px -8px rgba(25, 28, 29, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
+    .store-badge:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -10px rgba(25, 28, 29, 0.5); }
+    .store-badge:active { transform: scale(0.96); }
+    .store-badge svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .store-badge .txt { line-height: 1.2; text-align: left; }
+    .store-badge .txt small { display: block; font-size: 10.5px; opacity: 0.75; font-weight: 500; letter-spacing: 0.04em; }
+    .store-badge .txt strong { font-family: var(--font-display); font-size: 16.5px; font-weight: 700; }
+
+    .ticks { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-bottom: 22px; }
+    .ticks span { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #4c4a49; }
+    .tick {
+      width: 19px; height: 19px; border-radius: 50%;
+      background: var(--success-soft); color: var(--success);
+      display: grid; place-items: center; font-size: 10px; font-weight: 800; flex-shrink: 0;
+    }
+
+    .home-link { font-size: 14px; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .home-link:hover { text-decoration: underline; }
+
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
   </style>
 </head>
-
 <body>
-  <div class="brand">Poiser Fresh Chicken</div>
-  <div class="subtitle">Taaza chicken, ande aur masale ghar baithe order karein</div>
+  <main class="card">
+    <div class="app-icon" aria-hidden="true">🍗</div>
+    <h1 class="brand">Poiser Fresh Chicken</h1>
+    <div class="by">by Aspak Chicken Shop</div>
+    <p class="tagline">Fresh chicken, eggs &amp; masale delivered to your door in Kandivali East.</p>
+    <p class="hindi">Taaza chicken, ande aur masale — ghar baithe order karein. 🛵</p>
 
-  <h2>App download karein</h2>
-  <p>Agar automatic redirect nahi hua, neeche button par click karein.</p>
+    <div class="note"><span class="spinner" aria-hidden="true"></span><span id="redirectNote">Taking you to your app store…</span></div>
 
-  <a class="btn" href="https://play.google.com/store/apps/details?id=com.devwithdelta.freshchicken">
-    Android App Download
-  </a>
+    <div class="store-badges">
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.devwithdelta.freshchicken">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#00DFA0" d="M3.6 1.8 13.7 12 3.6 22.2c-.37-.2-.6-.6-.6-1.1V2.9c0-.5.23-.9.6-1.1z"/>
+          <path fill="#FFD400" d="M17.4 8.3 13.7 12l3.7 3.7 3.05-1.72c1-.57 1-2.4 0-2.96L17.4 8.3z"/>
+          <path fill="#FF4E4E" d="M13.7 12 3.6 22.2c.33.18.76.2 1.14-.02L17.4 15.7 13.7 12z"/>
+          <path fill="#00C3FF" d="M13.7 12 17.4 8.3 4.74 1.82C4.36 1.6 3.93 1.62 3.6 1.8L13.7 12z"/>
+        </svg>
+        <span class="txt"><small>GET IT ON</small><strong>Google Play</strong></span>
+      </a>
 
-  <a class="btn" href="https://apps.apple.com/app/6777937810">
-    iPhone App Download
-  </a>
+      <a class="store-badge" href="https://apps.apple.com/in/app/poiser-fresh-chicken/id6777937810">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.05 12.54c-.03-2.89 2.36-4.28 2.47-4.35-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.89 1.45-.06 2-.94 3.75-.94s2.24.94 3.77.91c1.56-.03 2.55-1.41 3.5-2.8 1.1-1.61 1.55-3.17 1.58-3.25-.03-.02-3.03-1.17-3.08-4.59zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/>
+        </svg>
+        <span class="txt"><small>Download on the</small><strong>App Store</strong></span>
+      </a>
+    </div>
+
+    <div class="ticks">
+      <span><span class="tick">✓</span> 100% fresh</span>
+      <span><span class="tick">✓</span> Cash on delivery</span>
+      <span><span class="tick">✓</span> Cut to order</span>
+    </div>
+
+    <a class="home-link" href="aspak_shop.html">← Learn more about Aspak Chicken Shop</a>
+  </main>
 </body>
 </html>
